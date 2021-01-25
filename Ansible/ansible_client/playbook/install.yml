@@ -1,0 +1,13 @@
+---
+- name: Install docker
+  hosts: tp
+  gather_facts: true
+  become: true
+  tasks:
+   - name: Install docker package
+     apt:
+       name: docker
+       update_cache: true
+   - name: Clone git
+     git:
+       repo: https://github.com/j0h3/cours_ynov.git
